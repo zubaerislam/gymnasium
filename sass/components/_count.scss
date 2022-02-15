@@ -1,0 +1,29 @@
+@import '../variables/variables';
+@import '../mixins/mixin';
+
+/*======================================
+            count start
+========================================*/
+#count{
+    padding-bottom: 80px;
+    .count_bg{
+        position: relative;
+        z-index: 1;
+    
+        &:after {
+            @include ab_tl(0, 0, 100%, 100%, rgba(0, 0, 0, 0.9));
+            z-index: -1;
+        }
+    }
+    .count_text{
+        h2{
+            @include fs($w, 40px, 700, $ows);
+        }
+        h3{
+            @include fs($w, 16px, 400, $ows);
+        }
+    }
+}
+/*======================================
+            count end
+========================================*/

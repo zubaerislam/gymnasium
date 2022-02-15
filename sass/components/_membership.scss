@@ -1,0 +1,61 @@
+@import '../variables/variables';
+@import '../mixins/mixin';
+
+/*======================================
+            membership start
+========================================*/
+#membership{
+    padding: 0 0 80px;
+    .member_main{
+        padding-top: 30px;
+        h3{
+            @include fs(#222222, 16px, 700, $ows);
+            text-transform: uppercase;
+            padding: 20px 0;
+            background: #dddddd;
+            transition: all linear .3s;
+        }
+        h2{
+            position: relative;
+            z-index: 1;
+            &:after{
+                @include ab_tl(0, 0, 100%, 100%, rgba(0, 0, 0, 0.8));
+                z-index: -1;
+            }
+            @include fs($w, 50px, 500, $ows);
+            span{
+                font-size: 29px;
+            }
+            padding: 26px 0 31px;
+        }
+        ul{
+            padding: 34px 0;
+            background: #f1f1f1;
+            li{
+                @include fs(#444444, 14px, 400, $open);
+                padding-bottom: 17px;
+                &:last-child{
+                    padding-bottom: 0;
+                }
+            }
+        }
+        a{
+            @include fs(#222222, 16px, 400, $ows);
+            text-transform: uppercase;
+            padding: 10px 0;
+            background: #dddddd;
+            display: block;
+            transition: all linear .3s;
+        }
+        &:hover{
+            h3,
+            a{
+                background: $main_col;
+                color: $w;
+            }
+        }
+    }
+}
+/*======================================
+            membership end
+========================================*/

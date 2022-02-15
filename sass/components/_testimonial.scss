@@ -1,0 +1,74 @@
+@import '../variables/variables';
+@import '../mixins/mixin';
+
+/*======================================
+            testimonial start
+========================================*/
+#testimonial{
+    padding: 0 0 80px;
+    .slick-dots {
+        display: flex;
+        flex-wrap: wrap;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-5%);
+
+        li {
+            button {
+                font-size: 0;
+                width: 15px;
+                height: 15px;
+                background: transparent;
+                border: 1px solid $w;
+                border-radius: 50%;
+                margin: 0 5px;
+            }
+
+            &.slick-active {
+                button {
+                    background: $main_col;
+                    width: 20px;
+                    height: 20px;
+                    border-color: $main_col;
+                }
+            }
+        }
+    }
+    .test_bg{
+        padding: 30px 0 80px;
+        position: relative;
+        z-index: 1;
+        margin-top: 13px;
+        &:after{
+            @include ab_tl(0, 0, 100%, 100%, rgba(0, 0, 0, 0.8));
+            z-index: -1;
+        }
+        .test_text{
+            .testi_1{
+                h3{
+                    @include fs($w, 14px, 400, $ows);
+                    text-transform: uppercase;
+                    margin-bottom: 4px;
+                }
+                h4{
+                    @include fs($w, 14px, 400, $ows);
+                    margin-bottom: 5px;
+                }
+                a{
+                    color: $main_col;
+                    font-size: 14px;
+                }
+            }
+            .testi_2{
+                p{
+                    @include fs(#dddddd, 13px, 400, $open);
+                    line-height: 18px;
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+}
+/*======================================
+            testimonial end
+========================================*/

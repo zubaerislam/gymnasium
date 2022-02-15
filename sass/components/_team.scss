@@ -1,0 +1,102 @@
+@import '../variables/variables';
+@import '../mixins/mixin';
+
+/*======================================
+            team start
+========================================*/
+#team {
+    padding: 74px;
+
+    .team_head{
+        transition: all linear .3s;
+        margin-top: 72px;
+        .team_img {
+            position: relative;
+            .overlay {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                right: 10px;
+                bottom: 10px;
+                background: rgba(226, 62, 56, 0.4);
+                border: 3px solid rgba(255, 255, 255, 0.6);
+                transform: scale(0);
+                transition: all linear .3s;
+                ul {
+                    position: absolute;
+                    right: 10px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    li {
+                        a{
+                            font-size: 16px;
+                            height: 28px;
+                            width: 28px;
+                            border: 1px solid $w;
+                            text-align: center;
+                            line-height: 28px;
+                            margin: 5px 0;
+                            color: $w;
+                            transition: all linear .3s;
+                            &:hover{
+                                background: $w;
+                                .fb{
+                                    color: #3b5998;
+                                    transition: all linear .3s;
+                                }
+                                .twitt{
+                                    color: #00acee;
+                                    transition: all linear .3s;
+                                }
+                                .link{
+                                    color: #0e76a8;
+                                    transition: all linear .3s;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .team_text{
+            cursor: pointer;
+            h3{
+                @include fs(#222222, 14px, 400, $ows);
+                text-transform: uppercase;
+                margin-top: 18px;
+            }
+            h4{
+                @include fs(#444444, 14px, 400, $ows);
+                margin-top: 5px;
+            }
+            p{
+                @include fs(#444444, 13px, 400, $open);
+                line-height: 18px;
+                transform: scale(0);
+                transition: all linear .3s;
+                margin: 8px 5px 8px;
+            }
+        }
+                
+        &:hover{
+            transform: translateY(-42px);
+            .team_img{
+                .overlay{
+                    transform: scale(1);
+                }
+            }
+
+            .team_text{
+                p{
+                    transform: scale(1);
+                }
+                border: 1px solid #ddd;
+            }
+        }
+    }
+}
+
+/*======================================
+            team end
+========================================*/

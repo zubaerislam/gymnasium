@@ -1,0 +1,116 @@
+@import '../variables/variables';
+@import '../mixins/mixin';
+
+/*======================================
+            banner start
+========================================*/
+#banner {
+    .slick-dots {
+        position: absolute;
+        left: 50%;
+        bottom: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        transform: translateX(-50%);
+
+        li {
+            button {
+                font-size: 0;
+                width: 15px;
+                height: 15px;
+                background: transparent;
+                border: 1px solid $w;
+                border-radius: 50%;
+                margin: 0 5px;
+            }
+
+            &.slick-active {
+                button {
+                    background: $main_col;
+                    width: 20px;
+                    height: 20px;
+                    border-color: $main_col;
+                }
+            }
+        }
+    }
+}
+
+.banner_pic {
+    padding: 254px 0 117px;
+    position: relative;
+    z-index: 1;
+
+    &:after {
+        @include ab_tl(0, 0, 100%, 100%, rgba(0, 0, 0, 0.6));
+        z-index: -1;
+    }
+
+    .banner_text {
+        h2 {
+            @include fs(#ffffff, 30px, 700, $ows);
+            text-transform: uppercase;
+            position: relative;
+
+            &:after {
+                @include ab_tl(46px, 13px, 3px, 149px, $main_col);
+                clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+            }
+
+            &:before {
+                @include ab_tr(37px, 13px, 3px, 109px, $main_col);
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 5% 100%);
+            }
+        }
+
+        h1 {
+            @include fs($main_col, 60px, 700, $ows);
+            text-transform: uppercase;
+            margin-top: 3px;
+            position: relative;
+
+            &:after {
+                @include ab_tl(46px, -25px, 196px, 3px, $main_col);
+                clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+            }
+
+            &:before {
+                @include ab_tr(35px, -26px, 197px, 3px, $main_col);
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 5% 100%);
+            }
+        }
+
+        p {
+            @include fs(#dddddd, 13px, 400, $open);
+            line-height: 18px;
+            margin-top: 10px;
+            position: relative;
+
+            &:after {
+                @include ab_bl(48px, -53px, 3px, 67px, $main_col);
+            }
+
+            &:before {
+                @include ab_br(38px, -53px, 3px, 53px, $main_col);
+            }
+        }
+
+        a {
+            @include fs(#ffffff, 16px, 500, $ows);
+            text-transform: uppercase;
+            padding: 7px 14px;
+            border: 1px solid #ffffff;
+            margin: 9px 12px;
+            transition: all linear .3s;
+
+            &:hover {
+                background: $main_col;
+                border-color: $main_col;
+            }
+        }
+    }
+}
+
+/*======================================
+            banner end
+========================================*/

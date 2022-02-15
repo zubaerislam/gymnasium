@@ -1,0 +1,29 @@
+@import '../variables/variables';
+@import '../mixins/mixin';
+
+/*======================================
+                slide start
+========================================*/
+#slider{
+    padding: 30px;
+    position: relative;
+    .prv_arr{
+        position: absolute;
+        left: -25px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 99;
+        font-size: 35px;
+    }
+    .nxt_arr{
+        position: absolute;
+        right: -25px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 99;
+        font-size: 35px;
+    }
+}
+/*======================================
+                slide end
+========================================*/

@@ -1,0 +1,132 @@
+@import '../variables/variables';
+@import '../mixins/mixin';
+
+/*======================================
+            navbar start
+========================================*/
+.main_menu {
+    height: 50px;
+    background: rgba(53, 53, 53, 0.25);
+    margin-top: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+
+    .navbar-brand {
+        background: #323232;
+        width: 245px;
+        height: 70px;
+        text-align: center;
+        line-height: 70px;
+        transform: skew(-40deg);
+        -webkit-transform: skew(-40deg);
+        -moz-transform: skew(-40deg);
+        -ms-transform: skew(-40deg);
+        -o-transform: skew(-40deg);
+        position: relative;
+
+        &::after {
+            @include ab_tl(0, 0, 100%, 4px, #000000);
+        }
+
+        &::before {
+            @include ab_tr(0, 0, 100%, 4px, #000000);
+        }
+
+        img {
+            transform: skew(40deg);
+            -webkit-transform: skew(40deg);
+            -moz-transform: skew(40deg);
+            -ms-transform: skew(40deg);
+            -o-transform: skew(40deg);
+        }
+    }
+
+    ul {
+        li {
+            a {
+                @include fs(#f1f1f1, 14px, 400, $ows);
+                text-transform: uppercase;
+                line-height: 50px;
+                padding: 0 10px;
+                position: relative;
+                transition: all linear .3s;
+                -webkit-transition: all linear .3s;
+                -moz-transition: all linear .3s;
+                -ms-transition: all linear .3s;
+                -o-transition: all linear .3s;
+
+                &:hover {
+                    background: $w;
+                    color: #222222;
+
+                    &:after {
+                        width: 100%;
+                    }
+                }
+
+                &::after {
+                    @include ab_br(0, 0, 3px, 0, $main_col);
+                    transition: all linear .3s;
+                    -webkit-transition: all linear .3s;
+                    -moz-transition: all linear .3s;
+                    -ms-transition: all linear .3s;
+                    -o-transition: all linear .3s;
+                }
+            }
+        }
+    }
+
+    .toogle_nav {
+        background: $main_col;
+        border-radius: 7px 0 7px 0;
+        i{
+            line-height: 30px;
+            font-size: 20px;
+            color: #e0b8b8;
+        }
+    }
+}
+
+
+/*======================================
+            navbar end
+========================================*/
+/*======================================
+            js animation satrt
+========================================*/
+.menu_fix {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    background: rgba(0, 0, 0, 0.9);
+    margin-top: 0;
+}
+
+.top {
+    color: #ffffff;
+    font-size: 25px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    background: $main_col;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    position: fixed;
+    right: 20px;
+    bottom: 30px;
+    z-index: 999;
+    text-align: center;
+    display: none;
+    cursor: pointer;
+}
+/*======================================
+            js animation end
+========================================*/
